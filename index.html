@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow=="crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+こんにちは
+</header>
+
+<script type="text/javascript">
+window.addEventListener('load', init);
+
+function init() {
+const scene = newTHREE.Scene();
+const camera = newTHREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000,
+);
+
+const renderer = newTHREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const geometry = newTHREE.BoxGeometry();
+const material = newTHREE.MeshBasicMaterial( { color:0x00ff00 } );
+const cube = newTHREE.Mesh( geometry, material );
+scene.add(cube);
+camera.position.z = 5;
+
+renderer.redner(scene, cmaera);
+};
+</script>
+</body>
+</html>
